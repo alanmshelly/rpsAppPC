@@ -6,18 +6,23 @@ export default class Requests {
             !validThrows.includes(player2Throw)
         ) {
             observer.invalid()
-        } else if (
-            player1Throw === player2Throw
-        ) {
+            return
+        }
+
+        if (player1Throw === player2Throw) {
             observer.tie()
-        } else if (
+            return
+        }
+
+        if (
             player1Throw === 'paper' && player2Throw === 'rock' ||
             player1Throw === 'rock' && player2Throw === 'scissors' ||
             player1Throw === 'scissors' && player2Throw === 'paper'
         ) {
             observer.p1Wins()
-        } else {
-            observer.p2Wins()
+            return
         }
+
+        observer.p2Wins()
     }
 }
