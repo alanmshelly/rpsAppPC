@@ -7,12 +7,13 @@
     "react-dom": "latest"
   },
   "devDependencies": {
-    "watchify": "latest",
-    "babelify": "latest",
     "@babel/core": "latest",
     "@babel/preset-env": "latest",
     "@babel/preset-react": "latest",
-    "jasmine": "latest"
+    "@types/jasmine": "^3.4.0",
+    "babelify": "latest",
+    "jasmine": "latest",
+    "watchify": "latest"
   },
   "scripts": {
     "compile-app": "watchify src/*.jsx --extension=.jsx -o bundled/compiledApp.js -t [ babelify ]",
