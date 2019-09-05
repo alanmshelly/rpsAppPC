@@ -1,23 +1,23 @@
 export default class Requests {
-    play(player1Throw, player2Throw, observer) {
-        const validThrows = ['paper', 'scissors', 'rock']
+    play(p1Throw, p2Throw, observer) {
+        const choices = ['paper', 'scissors', 'rock']
         if (
-            !validThrows.includes(player1Throw) ||
-            !validThrows.includes(player2Throw)
+            !choices.includes(p1Throw) ||
+            !choices.includes(p2Throw)
         ) {
             observer.invalid()
             return
         }
 
-        if (player1Throw === player2Throw) {
+        if (p1Throw === p2Throw) {
             observer.tie()
             return
         }
 
         if (
-            player1Throw === 'paper' && player2Throw === 'rock' ||
-            player1Throw === 'rock' && player2Throw === 'scissors' ||
-            player1Throw === 'scissors' && player2Throw === 'paper'
+            p1Throw === 'paper' && p2Throw === 'rock' ||
+            p1Throw === 'rock' && p2Throw === 'scissors' ||
+            p1Throw === 'scissors' && p2Throw === 'paper'
         ) {
             observer.p1Wins()
             return
